@@ -32,7 +32,7 @@ jobs:
       - name: Create zip
         run: |
           cd dist
-          zip -r MyApp-macOS.zip main.app || true
+          zip -r MyApp-macOS.zip main02noimage.app || true
           zip -r MyApp-macOS-binary.zip main || true
           cd ..
 
