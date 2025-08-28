@@ -495,37 +495,33 @@ class DropWidget(QWidget):
 def generate_wechat_html(data, image_map=None):
         parts = []
         parts.append('<meta charset="UTF-8">')
-        parts.append(styled_paragraph('<span style="background-color:#5287b7;color:#ffffff;">今日案例播客版  干货知识轻松听</span>', "#5e5e5e", 16))
-        parts.append(styled_paragraph('<span style="background-color:#5287b7;color:#ffffff;">延伸阅读</span>', "#5e5e5e", 16))
 
-        parts.append(styled_paragraph('【裁判要旨】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
-        parts.append(styled_paragraph("在此输入裁判要旨内容", "#5e5e5e", 16, align='left', margin_top=0, margin_bottom=32))
-        parts.append(styled_paragraph('【文书全文】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
-        parts.append(styled_paragraph('【文书标题、案号及来源】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
+        parts.append(styled_paragraph('【裁判要旨】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))
+        parts.append(styled_paragraph("在此输入裁判要旨内容", "#5e5e5e", 16, align='left', margin_top=0, margin_bottom=0))
+        parts.append(styled_paragraph('【文书全文】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))
+        parts.append(styled_paragraph('【文书标题、案号及来源】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))
     
         parts.append(styled_paragraph("标题：" + data['case_name'], "#5e5e5e", 16, margin_bottom=0))
         parts.append(styled_paragraph("案号：" + data['case_number'], "#5e5e5e", 16, margin_bottom=0))
-        parts.append(styled_paragraph("来源：中国裁判文书网", "#5e5e5e", 16, margin_bottom=32))
+        parts.append(styled_paragraph("来源：威科先行", "#5e5e5e", 16, margin_bottom=0))
 
-        parts.append(styled_paragraph('【当事人信息】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))  
+        parts.append(styled_paragraph('【当事人信息】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))  
 
-        parts.append(styled_paragraphs(data['parties_info'].split('\n'), "#5e5e5e", 16, margin_bottom=0, only_last_has_margin=True, last_margin_bottom=32))
-        parts.append(styled_paragraph('【诉讼记录】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))  
+        parts.append(styled_paragraphs(data['parties_info'].split('\n'), "#5e5e5e", 16, margin_bottom=0, only_last_has_margin=True, last_margin_bottom=0))
+        parts.append(styled_paragraph('【诉讼记录】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))  
 
-        parts.append(styled_paragraphs(data['litigation_process'].split('\n'), "#5e5e5e", 16, margin_bottom=32))
-        parts.append(styled_paragraph('【案件基本情况】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))  
+        parts.append(styled_paragraphs(data['litigation_process'].split('\n'), "#5e5e5e", 16, margin_bottom=0))
+        parts.append(styled_paragraph('【案件基本情况】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))  
 
-        parts.append(styled_paragraphs(data['case_info'].split('\n'), "#5e5e5e", 16, margin_bottom=32, only_last_has_margin=True, last_margin_bottom=32))
-        parts.append(styled_paragraph('【裁判分析过程】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
+        parts.append(styled_paragraphs(data['case_info'].split('\n'), "#5e5e5e", 16, margin_bottom=32, only_last_has_margin=True, last_margin_bottom=0))
+        parts.append(styled_paragraph('【裁判分析过程】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))
 
-        parts.append(styled_paragraphs(data['trial_analysis'].split('\n'), "#5e5e5e", 16, margin_bottom=32, only_last_has_margin=True, last_margin_bottom=32))
-        parts.append(styled_paragraph('【裁判结果】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
+        parts.append(styled_paragraphs(data['trial_analysis'].split('\n'), "#5e5e5e", 16, margin_bottom=32, only_last_has_margin=True, last_margin_bottom=0))
+        parts.append(styled_paragraph('【裁判结果】', "#5287b7", 16, bold=True, align='left', margin_bottom=0))
 
         parts.append(styled_paragraphs(data['trial_result'].split('\n'), "#5e5e5e", 16, margin_bottom=0))
 
         parts.append('<br>' + styled_paragraphs(data['judge_info'].split('\n'), "#5e5e5e", 16, align='right', margin_bottom=0) + '<br>')
-
-        parts.append(styled_paragraph("编辑团队：薛政  黄琳娜  初相钰  赵绮", "#5e5e5e", 16, align='center', margin_top=32, margin_bottom=0))
 
         return "\n".join(parts)
 
