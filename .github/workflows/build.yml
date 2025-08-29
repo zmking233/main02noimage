@@ -45,5 +45,5 @@ jobs:
           
       - name: Test run the app
         run: |
-          ./dist/MyApp.app/Contents/MacOS/MyApp --help || true
+          ./dist/main02noimage.app/Contents/MacOS/MyApp --help || true
 
