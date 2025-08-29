@@ -4,7 +4,7 @@ on:
   workflow_dispatch:   # 手动触发
   push:
     branches:
-      - main           # 或 master，看你用的分支
+      - 回滚案例库           # 或 master，看你用的分支
 
 jobs:
   build:
@@ -27,13 +27,13 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --onefile --windowed main02noimage.py
+          pyinstaller --onefile --windowed main01.py
           ls -lh dist/
 
       - name: Create zip
         run: |
           cd dist
-          zip -r MyApp-macOS.zip main02noimage.app || true
+          zip -r MyApp-macOS.zip main01.app || true
           zip -r MyApp-macOS-binary.zip main || true
           cd ..
 
