@@ -27,7 +27,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --onefile --windowed main02noimage.py
+          pyinstaller --onedir --windowed main02noimage.py
           ls -lh dist/
 
       - name: Create zip
