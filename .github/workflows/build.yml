@@ -27,7 +27,7 @@ jobs:
 
       - name: Build with PyInstaller
         run: |
-          pyinstaller --onefile --windowed main01.py
+          pyinstaller --onedir --windowed main01.py
           ls -lh dist/
 
       - name: Create zip
