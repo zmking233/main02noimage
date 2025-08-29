@@ -34,7 +34,7 @@ jobs:
         run: |
           cd dist
           zip -r MyApp-macOS.zip main02noimage.app || true
-          zip -r MyApp-macOS-binary.zip main || true
+          zip -r MyApp-macOS-binary.zip main02noimage || true
           cd ..
 
       - name: Upload artifact
