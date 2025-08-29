@@ -46,6 +46,9 @@ jobs:
       - name: Show dist contents
         run: ls -R dist
 
-      - name: Test run the app
-        run: ./dist/main02noimage.app/Contents/MacOS/main02noimage --help || true
+      - name: Run app for smoke test
+        run: |
+          ./dist/main02noimage.app/Contents/MacOS/main02noimage &
+          sleep 5
+          pkill -f main02noimage || true
 
