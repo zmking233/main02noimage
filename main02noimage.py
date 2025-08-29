@@ -495,7 +495,6 @@ class DropWidget(QWidget):
 def generate_wechat_html(data, image_map=None):
         parts = []
         parts.append('<meta charset="UTF-8">')
-        parts.append(styled_paragraph('<span style="background-color:#5287b7;color:#ffffff;">今日案例播客版  干货知识轻松听</span>', "#5e5e5e", 16))
         parts.append(styled_paragraph('<span style="background-color:#5287b7;color:#ffffff;">延伸阅读</span>', "#5e5e5e", 16))
 
         parts.append(styled_paragraph('【裁判要旨】', "#5287b7", 16, bold=True, align='left', margin_bottom=32))
@@ -525,8 +524,6 @@ def generate_wechat_html(data, image_map=None):
 
         parts.append('<br>' + styled_paragraphs(data['judge_info'].split('\n'), "#5e5e5e", 16, align='right', margin_bottom=0) + '<br>')
 
-        parts.append(styled_paragraph("编辑团队：薛政  黄琳娜  初相钰  赵绮", "#5e5e5e", 16, align='center', margin_top=32, margin_bottom=0))
-
         return "\n".join(parts)
 
 def convert_html_images_to_base64(html_path, output_path=None):
@@ -548,3 +545,4 @@ if __name__ == '__main__':
     win = DropWidget()
     win.show()
     sys.exit(app.exec_())
+
