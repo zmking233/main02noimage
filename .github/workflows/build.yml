@@ -41,3 +41,8 @@ jobs:
         with:
           name: MyApp-macOS
           path: dist/*.zip
+          
+      - name: Test run the app
+        run: |
+          ./dist/MyApp.app/Contents/MacOS/MyApp --help || true
+
