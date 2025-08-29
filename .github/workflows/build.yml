@@ -49,6 +49,6 @@ jobs:
       - name: Run app for smoke test
         run: |
           ./dist/main02noimage.app/Contents/MacOS/main02noimage &
-          sleep 5
+          sleep 20
           pkill -f main02noimage || true
 
