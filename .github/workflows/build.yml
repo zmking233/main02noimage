@@ -46,5 +46,5 @@ jobs:
         run: ls -R dist
 
       - name: Test run the app
-        run: ./dist/main02noimage.app/Contents/MacOS/main02noimage --help || true
+        run: ./dist/main01.app/Contents/MacOS/main01 --help || true
 
