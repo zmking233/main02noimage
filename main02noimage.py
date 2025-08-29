@@ -540,7 +540,11 @@ def convert_html_images_to_base64(html_path, output_path=None):
     print(f"转换完成！输出文件: {output_path}")
 
 if __name__ == '__main__':
+    print(">>> QApplication initializing...")
     app = QApplication(sys.argv)
     win = DropWidget()
     win.show()
-    sys.exit(app.exec_())
+    print(">>> Main window created and shown!")
+    exit_code = app.exec_()
+    print(">>> QApplication exited with code", exit_code)
+    sys.exit(exit_code)
