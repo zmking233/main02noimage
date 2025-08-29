@@ -42,7 +42,9 @@ jobs:
           name: MyApp-macOS
           path: dist/*.zip
           
+      - name: Show dist contents
+        run: ls -R dist
+
       - name: Test run the app
-        run: |
-          ./dist/MyApp.app/Contents/MacOS/MyApp --help || true
+        run: ./dist/main02noimage.app/Contents/MacOS/main02noimage --help || true
 
