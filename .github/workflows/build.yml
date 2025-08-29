@@ -4,7 +4,7 @@ on:
   workflow_dispatch:   # 手动触发
   push:
     branches:
-      - main           # 或 master，看你用的分支
+      - 回滚           # 或 master，看你用的分支
 
 jobs:
   build:
