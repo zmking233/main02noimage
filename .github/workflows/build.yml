@@ -30,6 +30,11 @@ jobs:
           pyinstaller --onedir --windowed main02noimage.py
           ls -lh dist/
 
+      - name: Fix app permissions and remove quarantine
+        run: |
+          chmod -R 777 dist/main02noimage.app
+          xattr -cr dist/main02noimage.app
+
       - name: Create zip
         run: |
           cd dist
