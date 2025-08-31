@@ -29,6 +29,11 @@ jobs:
         run: |
           pyinstaller --onedir --windowed main01.py
           ls -lh dist/
+      
+      - name: Fix app permissions and remove quarantine
+        run: |
+          chmod -R 777 dist/main01.app
+          xattr -cr dist/main01.app
 
       - name: Create zip
         run: |
