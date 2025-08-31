@@ -34,6 +34,18 @@ jobs:
         run: |
           chmod -R 777 dist/main01.app
           xattr -cr dist/main01.app
+          
+      - name: Verify app permissions
+        run: |
+          ls -ld dist/*.app
+          ls -l dist/*.app/Contents/MacOS
+
+      - name: Verify xattr cleared
+        run: |
+          for app in dist/*.app; do
+            echo "Checking extended attributes for $app"
+            xattr -l "$app" || echo "No attributes"
+          done
 
       - name: Create zip
         run: |
